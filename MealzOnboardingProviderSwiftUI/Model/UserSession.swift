@@ -19,9 +19,11 @@ class UserSession: ObservableObject {
     func disconnectUser() {
         user = nil
         userRepository.deleteStoredUser()
+        // TODO 3f. Call Mealz Function
     }
     
     func setUser(user: PretendUser) {
+        // TODO 3e. Call Mealz Function
         self.user = user
     }
 }
