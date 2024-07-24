@@ -14,6 +14,7 @@
 		6E2345752C511DAC00866A0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6E2345742C511DAC00866A0B /* Assets.xcassets */; };
 		6E2345822C51223100866A0B /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2345812C51223100866A0B /* Recipes.swift */; };
 		6E2345842C5126C700866A0B /* Basket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2345832C5126C700866A0B /* Basket.swift */; };
+		6E2345902C5140A300866A0B /* MealzNaviOSSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 6E23458F2C5140A300866A0B /* MealzNaviOSSDK */; };
 		6E23459D2C5143D000866A0B /* PretendUserLocalDS.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E23459B2C5143CD00866A0B /* PretendUserLocalDS.swift */; };
 		6E23459E2C5143D000866A0B /* UserConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2345982C5143C400866A0B /* UserConnectionView.swift */; };
 		6E23459F2C5143D000866A0B /* UserConnectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2345992C5143C400866A0B /* UserConnectionViewModel.swift */; };
@@ -22,6 +23,7 @@
 		6E2345A42C51440A00866A0B /* PretendUserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2345A22C51440700866A0B /* PretendUserRepository.swift */; };
 		6E2345A72C51551100866A0B /* MealzOnboardingProviderSwiftUI.entitlements in Sources */ = {isa = PBXBuildFile; fileRef = 6E2345A52C51551100866A0B /* MealzOnboardingProviderSwiftUI.entitlements */; };
 		6E2345A82C51551100866A0B /* MealzOnboardingProviderSwiftUIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E2345A62C51551100866A0B /* MealzOnboardingProviderSwiftUIApp.swift */; };
+		6E9703822C5157E600C212B4 /* MealzManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E9703802C5157E300C212B4 /* MealzManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,7 @@
 		6E2345A22C51440700866A0B /* PretendUserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PretendUserRepository.swift; sourceTree = "<group>"; };
 		6E2345A52C51551100866A0B /* MealzOnboardingProviderSwiftUI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MealzOnboardingProviderSwiftUI.entitlements; sourceTree = "<group>"; };
 		6E2345A62C51551100866A0B /* MealzOnboardingProviderSwiftUIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealzOnboardingProviderSwiftUIApp.swift; sourceTree = "<group>"; };
+		6E9703802C5157E300C212B4 /* MealzManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MealzManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,7 @@
 		6E23456F2C511DAA00866A0B /* MealzOnboardingProviderSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				6E9703812C5157E300C212B4 /* Mealz */,
 				6E2345A52C51551100866A0B /* MealzOnboardingProviderSwiftUI.entitlements */,
 				6E2345A62C51551100866A0B /* MealzOnboardingProviderSwiftUIApp.swift */,
 				6E2345A32C51440700866A0B /* Repository */,
@@ -135,6 +139,14 @@
 				6E2345A22C51440700866A0B /* PretendUserRepository.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		6E9703812C5157E300C212B4 /* Mealz */ = {
+			isa = PBXGroup;
+			children = (
+				6E9703802C5157E300C212B4 /* MealzManager.swift */,
+			);
+			path = Mealz;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -215,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E9703822C5157E600C212B4 /* MealzManager.swift in Sources */,
 				6E2345A72C51551100866A0B /* MealzOnboardingProviderSwiftUI.entitlements in Sources */,
 				6E2345A82C51551100866A0B /* MealzOnboardingProviderSwiftUIApp.swift in Sources */,
 				6E2345A42C51440A00866A0B /* PretendUserRepository.swift in Sources */,
