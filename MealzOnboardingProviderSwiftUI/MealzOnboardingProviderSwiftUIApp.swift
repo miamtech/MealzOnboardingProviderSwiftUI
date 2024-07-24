@@ -11,8 +11,14 @@ import SwiftUI
  import mealzcore
  import MealziOSSDK
 
+
+// TODO: 2. Create MealzManager file
+// TODO 2a. Create MealzManager Class
+// TODO 2b. Create AppDelegate
+
 @main
 struct MealzOnboardingProviderSwiftUIApp: App {
+    // 2c. Add AppDelegate to SwiftUI App
     var body: some Scene {
         WindowGroup {
             ContentView()
