@@ -86,4 +86,15 @@ enum MealzViewConfig {
         navigateToCatalog: {},
         navigateToCheckout: {_ in }
     )
+    
+    // ---------------------------------- GET PRICE BUTTON ----------------------------------
+        
+    // TODO 8a. Add Price Button view parameters to MealzViewConfig
+    static let getPriceView = GetPriceButtonViewOptions(
+        priceSuccess: TypeSafePriceSuccess(MarmitonGetPriceSuccessView()),
+        buttonToGetPrice: TypeSafeEmpty(MarmitonGetPriceButtonView()),
+        priceNotAvailable: TypeSafeEmpty(MarmitonPriceNotAvailableView())
+    )
+    
+    static let getPriceParams = GetPriceButtonParameters(viewOptions: getPriceView)
 }

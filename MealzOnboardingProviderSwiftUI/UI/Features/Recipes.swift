@@ -8,15 +8,15 @@
 import SwiftUI
 // TODO 4a. import MealziOSSDK
 import MealziOSSDK
+import Combine
 
 // TODO: 4. Add Mealz Recipe Details
 
-// TODO 8. Get Price Button
-// TODO 8a. Add Price Button view parameters to MealzViewConfig
-// TODO 8b. Call GetPriceButton component
+// TODO: 8. Get Price Button
 
 struct Recipes: View {
     @Binding var selectedTab: Int
+    
     var body: some View {
         VStack {
             DummyRecipeCard(
@@ -61,7 +61,13 @@ struct Recipes: View {
                     .frame(width: 200, height: 100)
                 }
                 HStack {
-                    Text("Get price")
+                    // TODO 8b. Call GetPriceButton component
+                    GetPriceButton(
+                        params: MealzViewConfig.getPriceParams,
+                        recipeId: recipeId,
+                        isMealzRecipe: false,
+                        guestNumber: 4
+                    )
                     Spacer()
                     MealzShowRecipeDetailsButton(
                         recipeId: recipeId,
