@@ -14,6 +14,7 @@ import MealziOSSDK
 struct Basket: View {
     var body: some View {
         // TODO 6b. Add MyBasket component
-        MealzMyBasketFeatureSwiftUI(myBasketContructor: MyBasketFeatureConstructor(navigateToCatalog: {}, navigateToCheckout: { _ in }))
+        // TODO 7c. Pass in Config to UI components
+        MealzMyBasketFeatureSwiftUI(myBasketContructor: MealzViewConfig.myBasketConfig)
     }
 }
