@@ -11,6 +11,10 @@ import MealziOSSDK
 
 // TODO: 4. Add Mealz Recipe Details
 
+// TODO 8. Get Price Button
+// TODO 8a. Add Price Button view parameters to MealzViewConfig
+// TODO 8b. Call GetPriceButton component
+
 struct Recipes: View {
     @Binding var selectedTab: Int
     var body: some View {
