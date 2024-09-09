@@ -10,6 +10,7 @@ import mealzcore
 // TODO 5a. import Marmiton library
 import MarmitonUIMealzIOS
 import UIKit
+import MealziOSSDK
 
 // TODO 2a. Create MealzManager Class
 public class MealzManager {
@@ -74,4 +75,24 @@ let changeStore: () -> Void = {
 
 // TODO 9. Transfer Basket
 // TODO 9a. Add showCheckout redirect function
-// TODO 9b. Pass function into MyBasket in MealzViewConfig
+
+let showCheckout: (_ url: String?) -> Void = { urlString in
+    
+    guard let urlString = urlString else { return }
+    guard let url = URL(string: urlString) else { return }
+    
+    let viewController = TransferBasketFeature(transferBasketUrl: url, retailerName: RetailerRepositoryCompanion.shared.retailerName ?? "").toUIKit()
+    viewController.modalPresentationStyle = .overCurrentContext
+    
+    if let sceneDelegate = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene,
+        let keyWindow = sceneDelegate.windows.first(where: { $0.isKeyWindow }),
+        let rootViewController = keyWindow.rootViewController
+    {
+        var topViewController = rootViewController
+        while let presentedViewController = topViewController.presentedViewController {
+            topViewController = presentedViewController
+        }
+        topViewController.present(viewController, animated: true)
+    }
+}
