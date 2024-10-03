@@ -5,12 +5,6 @@
 //  Created by miam x didi on 24/07/2024.
 //
 
-// TODO: 7. Import Custom Components
-// TODO 7a. Create MealzViewConfig file
-// TODO 7b. Copy template
-// TODO 7c. Pass in Config to UI components
-// TODO 7d. Marmiton -> Navigation Recipe Details to MyBasket
-
 import Foundation
 import mealzcore
 // TODO 5a. import Marmiton library

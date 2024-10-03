@@ -12,14 +12,17 @@ import MealziOSSDK
 // TODO: 4. Add Mealz Recipe Details
 
 struct Recipes: View {
+    @Binding var selectedTab: Int
     var body: some View {
         VStack {
             DummyRecipeCard(
+                selectedTab: $selectedTab,
                 imageUrl: "https://hips.hearstapps.com/hmg-prod/images/delish-202102-airfryerchickenparm-184-ls-1612561654.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
                 title: "Chicken Parm",
                 recipeId: "22509"
             )
             DummyRecipeCard(
+                selectedTab: $selectedTab,
                 imageUrl: "https://assets.afcdn.com/recipe/20170112/28965_w1024h768c1cx1500cy1000.webp",
                 title: "Croque Monsieur",
                 recipeId: "14472"
@@ -29,6 +32,7 @@ struct Recipes: View {
     }
     
     struct DummyRecipeCard: View {
+        @Binding var selectedTab: Int
         let imageUrl: String
         let title: String
         let recipeId: String
@@ -55,7 +59,14 @@ struct Recipes: View {
                 HStack {
                     Text("Get price")
                     Spacer()
-                    MealzShowRecipeDetailsButton(recipeId: recipeId, isMealzRecipe: false)
+                    MealzShowRecipeDetailsButton(
+                        recipeId: recipeId,
+                        isMealzRecipe: false,
+                        recipeDetailsConstructor: MealzViewConfig.recipeDetailsConfig({
+                            // TODO 7d. Marmiton -> Navigation Recipe Details to MyBasket
+                            selectedTab = 1
+                        })
+                    )
                 }
             }
             .padding()
@@ -63,8 +74,4 @@ struct Recipes: View {
             .background(Color.yellow)
         }
     }
-}
-
-#Preview {
-    Recipes()
 }
