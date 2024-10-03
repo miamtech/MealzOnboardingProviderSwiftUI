@@ -7,6 +7,11 @@
 
 import SwiftUI
 
+// TODO: 4. Add Mealz Recipe Details
+// TODO 4a. import MealziOSSDK
+// TODO 4b. Add Recipe Details in 2nd page
+// TODO 4c. Make sure isMealzRecipe is FALSE
+
 struct Recipes: View {
     var body: some View {
         VStack {
