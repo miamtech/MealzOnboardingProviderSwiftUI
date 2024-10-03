@@ -13,12 +13,20 @@ import SwiftUI
 
 
 // TODO: 2. Create MealzManager file
-// TODO 2a. Create MealzManager Class
+
 // TODO 2b. Create AppDelegate
+class AppDelegate: NSObject, UIApplicationDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        // init Mealz
+        let _ = MealzManager.sharedInstance
+        return true
+    }
+}
 
 @main
 struct MealzOnboardingProviderSwiftUIApp: App {
-    // 2c. Add AppDelegate to SwiftUI App
+    // TODO 2c. Add AppDelegate to SwiftUI App
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     var body: some Scene {
         WindowGroup {
             ContentView()
