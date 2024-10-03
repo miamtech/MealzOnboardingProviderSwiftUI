@@ -71,3 +71,7 @@ let changeStore: () -> Void = {
         topViewController.present(mealsWebView, animated: true)
     }
 }
+
+// TODO 9. Transfer Basket
+// TODO 9a. Add showCheckout redirect function
+// TODO 9b. Pass function into MyBasket in MealzViewConfig
