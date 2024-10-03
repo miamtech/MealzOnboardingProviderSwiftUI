@@ -20,10 +20,12 @@ class UserSession: ObservableObject {
         user = nil
         userRepository.deleteStoredUser()
         // TODO 3f. Call Mealz Function
+        MealzManager.sharedInstance.updateUserId(userId: nil)
     }
     
     func setUser(user: PretendUser) {
         // TODO 3e. Call Mealz Function
+        MealzManager.sharedInstance.updateUserId(userId: user.id)
         self.user = user
     }
 }
