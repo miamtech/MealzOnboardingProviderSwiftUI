@@ -7,6 +7,9 @@
 
 import Foundation
 import mealzcore
+// TODO 5a. import Marmiton library
+import MarmitonUIMealzIOS
+import UIKit
 
 // TODO 2a. Create MealzManager Class
 public class MealzManager {
@@ -17,7 +20,7 @@ public class MealzManager {
     // TODO: 3. Set SupplierKey, Store & User Id
     
     // TODO 3a. Copy & paste supplierID into variable
-    let providerKey = "ewoJInByb3ZpZGVyX2lkIjogIjE0IiwKCSJwbGF1c2libGVfZG9tYWluZSI6ICJtaWFtLnRlc3QiLAoJIm1pYW1fb3JpZ2luIjogIm1pYW0iLAoJIm9yaWdpbiI6ICJtaWFtIiwKCSJtaWFtX2Vudmlyb25tZW50IjogIlVBVCIKfQ"
+    let providerKey = "ewogICAgICAgICJwcm92aWRlcl9pZCI6ICJtYXJtaXRvbiIKCSJwbGF1c2libGVfZG9tYWluZSI6ICJtaWFtLm1hcm1pdG9uLmFwcCIsCgkibWlhbV9vcmlnaW4iOiAibWFybWl0b24iLAoJIm9yaWdpbiI6ICJtaWFtLm1hcm1pdG9uLmFwcCIsCgkibWlhbV9lbnZpcm9ubWVudCI6ICJVQVQiCn0="
     
     // TODO 3b. Init Mealz
     private init() {
@@ -31,15 +34,40 @@ public class MealzManager {
                 config.isAnonymousModeEnabled = true
             })
         })
+        // 5c. update MealzManager
+        Mealz.shared.user.setStoreLocatorRedirection {
+            print("test")
+            changeStore()
+        }
     }
     
     // TODO: 5. Set chooseStoreRedirct
-    // TODO 5a. import Marmiton library
-    // TODO 5b. use Mealz webview
-    // TODO 5c. update MealzManager
     
     // TODO 3d. Create function to set the user
     func updateUserId(userId: String?) {
         Mealz.shared.user.updateUserId(userId: userId, authorization: Authorization.userId)
+    }
+}
+
+// TODO 5b. use Mealz webview
+let changeStore: () -> Void = {
+    let htmlFileURL =  MarmitonUIMealzIOS.bundle.url(forResource: "index", withExtension: "html", subdirectory: "Ressources")!
+    
+    var mealsWebView =  MealzStoreLocatorWebView(url:htmlFileURL) { value in
+        guard let posId = value as? String else { return }
+    }
+    if let sceneDelegate = UIApplication.shared.connectedScenes
+        .first(where: { $0.activationState == .foregroundActive }) as? UIWindowScene,
+       let keyWindow = sceneDelegate.windows.first(where: { $0.isKeyWindow }),
+       let rootViewController = keyWindow.rootViewController {
+        
+        // Find the topmost view controller which is not presenting another view controller
+        var topViewController = rootViewController
+        while let presentedViewController = topViewController.presentedViewController {
+            topViewController = presentedViewController
+        }
+        
+        // Present the new view controller from the topmost view controller
+        topViewController.present(mealsWebView, animated: true)
     }
 }
