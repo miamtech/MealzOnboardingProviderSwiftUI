@@ -33,6 +33,11 @@ public class MealzManager {
         })
     }
     
+    // TODO: 5. Set chooseStoreRedirct
+    // TODO 5a. import Marmiton library
+    // TODO 5b. use Mealz webview
+    // TODO 5c. update MealzManager
+    
     // TODO 3d. Create function to set the user
     func updateUserId(userId: String?) {
         Mealz.shared.user.updateUserId(userId: userId, authorization: Authorization.userId)
