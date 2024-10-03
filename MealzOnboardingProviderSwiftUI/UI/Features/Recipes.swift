@@ -13,13 +13,13 @@ struct Recipes: View {
             DummyRecipeCard(
                 imageUrl: "https://hips.hearstapps.com/hmg-prod/images/delish-202102-airfryerchickenparm-184-ls-1612561654.jpg?crop=1xw:0.84375xh;center,top&resize=1200:*",
                 title: "Chicken Parm",
-                recipeId: "22509",
-                fetchPrice: { return 0.0 })
+                recipeId: "22509"
+            )
             DummyRecipeCard(
                 imageUrl: "https://assets.afcdn.com/recipe/20170112/28965_w1024h768c1cx1500cy1000.webp",
                 title: "Croque Monsieur",
-                recipeId: "14472",
-                fetchPrice: { return 0.0 })
+                recipeId: "14472"
+            )
         }
         .padding()
     }
@@ -28,10 +28,7 @@ struct Recipes: View {
         let imageUrl: String
         let title: String
         let recipeId: String
-        @State var getPriceText: String = "See Price"
-        let fetchPrice: () -> Double
         
-        @State private var showRecipeDetails: Bool = false
         var body: some View {
             VStack {
                 Text(title)
@@ -52,21 +49,14 @@ struct Recipes: View {
                     .frame(width: 200, height: 100)
                 }
                 HStack {
-                    Button(action: { fetchPrice() }, label: {
-                        Text(getPriceText)
-                    })
+                    Text("Get price")
                     Spacer()
-                    Button(action: { showRecipeDetails.toggle() }, label: {
-                        Text("Open Card")
-                    })
+                    Text("Open Card")
                 }
             }
             .padding()
             .frame(maxWidth: .infinity)
             .background(Color.yellow)
-            .sheet(isPresented: $showRecipeDetails, content: {
-                Text("RecipeId")
-            })
         }
     }
 }
