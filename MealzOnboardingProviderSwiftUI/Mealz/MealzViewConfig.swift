@@ -84,7 +84,8 @@ enum MealzViewConfig {
         myProductsBaseViews: myProductsBaseView,
         defaultTab: .products,
         navigateToCatalog: {},
-        navigateToCheckout: {_ in }
+        // TODO 9b. Pass function into MyBasket in MealzViewConfig
+        navigateToCheckout: showCheckout
     )
     
     // ---------------------------------- GET PRICE BUTTON ----------------------------------
